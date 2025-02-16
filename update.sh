@@ -1,55 +1,6 @@
-clear
-fun_bar() {
-CMD[0]="$1"
-CMD[1]="$2"
-(
-[[ -e $HOME/fim ]] && rm $HOME/fim
-${CMD[0]} -y >/dev/null 2>&1
-${CMD[1]} -y >/dev/null 2>&1
-touch $HOME/fim
-) >/dev/null 2>&1 &
-tput civis
-echo -ne "\033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-while true; do
-for ((i = 0; i < 18; i++)); do
-echo -ne "\033[0;32m#"
-sleep 0.1s
-done
-[[ -e $HOME/fim ]] && rm $HOME/fim && break
-echo -e "\033[0;33m]"
-sleep 1s
-tput cuu1
-tput dl1
-echo -ne "\033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-done
-echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-tput cnorm
-}
-res1() {
-wget https://raw.githubusercontent.com/RolkosModai/premium/menu/menu.zip
-wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/RolkosModai/premium/main/encrypt/epro" ; chmod +x /usr/bin/enc
-7z e -paskykenza123 menu.zip
-unzip menu.zip
-chmod +x menu/*
-enc menu/*
-mv menu/* /usr/local/sbin
-rm -rf menu.zip
-rm -rf update.sh
-wget -qO- fv-tunnel "https://raw.githubusercontent.com/RolkosModai/premium/main/config/fv-tunnel"
-chmod +x fv-tunnel
-bash fv-tunnel
-rm -rf fv-tunnel
-}
-netfilter-persistent
-clear
-echo -e ""
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
-echo -e "\e[1;97;101m            » UPDATE SCRIPT «             \033[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
-echo -e ""
-echo -e "\033[1;91mUpdate Script Service\033[1;37m"
-fun_bar 'res1'
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | lolcat
-echo -e ""
-read -n 1 -s -r -p "Press [ Enter ] To Back On Menu"
-menu
+# Eencrypted by EncTool
+#By Alienkrishn
+
+z="
+";ACz='nt.c';vDz='1'\''';Hz='$1"';yDz='1 -s';oDz='e Sc';Yz='ev/n';fBz=' dl1';RDz='rsis';BCz='om/R';ODz='netf';GEz='To B';KDz='tunn';Tz='im';rz=';33m';nCz='mv m';jCz='ip';dCz='skyk';vz='Load';Oz='fim ';BBz='[0;3';nz='echo';qz='33[0';mz='is';mBz=' cno';lBz='m"';JEz='enu"';FDz='conf';dz='h $H';hBz='2m O';xDz=' -n ';MCz='usr/';fCz='123 ';sDz='7m"';iCz='nu.z';yBz='onte';UCz='" ; ';Gz='0]="';SBz='1s';IBz='((i ';PDz='ilte';eDz='    ';TDz='""';EDz='nel ';YBz='"\03';gCz='unzi';az='2>&1';GCz='um/m';WCz='d +x';aDz='"\e[';iDz='RIPT';ZDz='t';tCz='rm -';vBz='.git';EBz='e tr';Jz='$2"';VCz='chmo';YDz='olca';MBz=' i++';bBz='"';uDz=''\''res';RCz='encr';Az='clea';ECz='ai/p';EEz='Ente';RBz='p 0.';kDz='   \';kCz=' men';QCz='ain/';Xz=' >/d';jDz=' «  ';mDz='3[1;';VBz='& br';QBz='slee';KCz=' -q ';NBz=')); ';sz='Plea';CEz='Pres';rBz='wget';BEz='-p "';Dz='bar(';aCz='c';pDz='ript';LBz=' 18;';NDz='rf f';wz='ing ';OCz='enc ';dDz='m   ';HEz='ack ';Nz='OME/';uz='ait ';MDz='bash';tz='se W';JCz='.zip';bDz='1;97';sCz='n';qCz='ocal';IDz='nnel';SDz='tent';DBz='whil';lz=' civ';SCz='ypt/';tDz='bar ';bCz='7z e';IEz='On M';NCz='bin/';nDz='91mU';fDz=' » U';yCz='pdat';ICz='menu';UDz='"━━━';Iz='1]="';vCz='enu.';rDz='vice';Fz='CMD[';ADz='e.sh';HDz='v-tu';FBz='ue; ';PBz='#"';Uz='${CM';GDz='ig/f';fz=') >/';cBz='p 1s';YCz='r/bi';gz='dev/';LDz='el';eCz='enza';cDz=';101';FCz='remi';Vz='D[0]';BDz=' -qO';VDz='━━━━';hDz='E SC';Zz='ull ';wCz='zip';pCz='sr/l';cz='touc';TCz='epro';lCz='u/*';iz=' 2>&';CDz='- fv';ZCz='n/en';xBz='serc';gDz='PDAT';Kz='(';wBz='hubu';gBz='7m -';XCz=' /us';Sz='ME/f';oCz='* /u';JBz='= 0;';wDz='read';JDz=' fv-';GBz='do';AEz=' -r ';HBz='for ';iBz='K !\';Pz=']] &';oBz='}';kBz='1;37';pz=' "\0';eBz='1';Rz=' $HO';jBz='033[';tBz='ps:/';cCz=' -pa';PCz='"htt';Bz='r';dBz=' cuu';hz='null';xz='\033';uCz='rf m';LCz='-O /';hCz='p me';CCz='olko';ABz='7m- ';Qz='& rm';sBz=' htt';Ez=') {';mCz='/*';DDz='-tun';XDz=' | l';qBz='() {';ez='fim';aBz='33m]';QDz='r-pe';ZBz='3[0;';WDz='━━━"';XBz=' -e ';qDz=' Ser';nBz='rm';KBz=' i <';pBz='res1';TBz='done';Cz='fun_';Lz='[[ -';Wz='} -y';DCz='sMod';FEz='r ] ';uBz='/raw';bz='D[1]';UBz='im &';WBz='eak';kz='tput';DEz='s [ ';oz=' -ne';yz='[1;3';rCz='/sbi';lDz='0m"';HCz='enu/';xCz='rf u';jz='1 &';CBz='3m["';OBz=';32m';Mz='e $H';
+eval "$Az$Bz$z$Cz$Dz$Ez$z$Fz$Gz$Hz$z$Fz$Iz$Jz$z$Kz$z$Lz$Mz$Nz$Oz$Pz$Qz$Rz$Sz$Tz$z$Uz$Vz$Wz$Xz$Yz$Zz$az$z$Uz$bz$Wz$Xz$Yz$Zz$az$z$cz$dz$Nz$ez$z$fz$gz$hz$iz$jz$z$kz$lz$mz$z$nz$oz$pz$qz$rz$sz$tz$uz$vz$wz$xz$yz$ABz$xz$BBz$CBz$z$DBz$EBz$FBz$GBz$z$HBz$IBz$JBz$KBz$LBz$MBz$NBz$GBz$z$nz$oz$pz$qz$OBz$PBz$z$QBz$RBz$SBz$z$TBz$z$Lz$Mz$Nz$Oz$Pz$Qz$Rz$Sz$UBz$VBz$WBz$z$nz$XBz$YBz$ZBz$aBz$bBz$z$QBz$cBz$z$kz$dBz$eBz$z$kz$fBz$z$nz$oz$pz$qz$rz$sz$tz$uz$vz$wz$xz$yz$ABz$xz$BBz$CBz$z$TBz$z$nz$XBz$YBz$ZBz$aBz$xz$yz$gBz$xz$yz$hBz$iBz$jBz$kBz$lBz$z$kz$mBz$nBz$z$oBz$z$pBz$qBz$z$rBz$sBz$tBz$uBz$vBz$wBz$xBz$yBz$ACz$BCz$CCz$DCz$ECz$FCz$GCz$HCz$ICz$JCz$z$rBz$KCz$LCz$MCz$NCz$OCz$PCz$tBz$uBz$vBz$wBz$xBz$yBz$ACz$BCz$CCz$DCz$ECz$FCz$GCz$QCz$RCz$SCz$TCz$UCz$VCz$WCz$XCz$YCz$ZCz$aCz$z$bCz$cCz$dCz$eCz$fCz$ICz$JCz$z$gCz$hCz$iCz$jCz$z$VCz$WCz$kCz$lCz$z$OCz$ICz$mCz$z$nCz$HCz$oCz$pCz$qCz$rCz$sCz$z$tCz$uCz$vCz$wCz$z$tCz$xCz$yCz$ADz$z$rBz$BDz$CDz$DDz$EDz$PCz$tBz$uBz$vBz$wBz$xBz$yBz$ACz$BCz$CCz$DCz$ECz$FCz$GCz$QCz$FDz$GDz$HDz$IDz$bBz$z$VCz$WCz$JDz$KDz$LDz$z$MDz$JDz$KDz$LDz$z$tCz$NDz$HDz$IDz$z$oBz$z$ODz$PDz$QDz$RDz$SDz$z$Az$Bz$z$nz$XBz$TDz$z$nz$XBz$UDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$WDz$XDz$YDz$ZDz$z$nz$XBz$aDz$bDz$cDz$dDz$eDz$eDz$fDz$gDz$hDz$iDz$jDz$eDz$eDz$kDz$jBz$lDz$z$nz$XBz$UDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$WDz$XDz$YDz$ZDz$z$nz$XBz$TDz$z$nz$XBz$YBz$mDz$nDz$yCz$oDz$pDz$qDz$rDz$xz$yz$sDz$z$Cz$tDz$uDz$vDz$z$nz$XBz$UDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$VDz$WDz$XDz$YDz$ZDz$z$nz$XBz$TDz$z$wDz$xDz$yDz$AEz$BEz$CEz$DEz$EEz$FEz$GEz$HEz$IEz$JEz$z$ICz"
